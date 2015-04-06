@@ -13,7 +13,7 @@ This box contains a vagrant / puppet recipe that allows you to create a develop 
 
 ## Installed Services
 
-All of the installed services are portmapped from the guest VM to the host OS.  This means, for example, that you can access the web client by navigating to http://localhost:15672 from a browser running _on your Windows desktop_.
+All of the installed services are portmapped from the guest VM to the host OS.  This means, for example, that you can access the web client by navigating to [http://localhost:15672](http://localhost:15672) from a browser running _on your Windows desktop_.
 
 ### RabbitMQ
 
@@ -22,7 +22,7 @@ port: 5672
 
 ### RabbitMQ Web client
 
-url: http://localhost:15672/  
+url: [http://localhost:15672](http://localhost:15672)
 username: guest  
 password: guest  
 
