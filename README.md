@@ -17,14 +17,14 @@ All of the installed services are portmapped from the guest VM to the host OS.  
 
 ### RabbitMQ
 
-host: localhost  
-port: 5672  
+* host: localhost  
+* port: 5672  
 
 ### RabbitMQ Web client
 
-url: [http://localhost:15672](http://localhost:15672)
-username: guest  
-password: guest  
+* url: [http://localhost:15672](http://localhost:15672)
+* username: guest  
+* password: guest  
 
 ## Additional Files
 
