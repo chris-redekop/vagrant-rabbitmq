@@ -7,12 +7,32 @@ apt::source { 'apt-source':
   key_source => 'http://www.rabbitmq.com/rabbitmq-signing-key-public.asc',
 }
 
-class { 'rabbitmq::server':
+class { '::rabbitmq':
+  config => 'prov/rabbitmq.config.erb',
   require => Apt::Source['apt-source'],
 }
 
-rabbitmq_plugin { 'rabbitmq_management':
-  ensure => present,
-  provider => 'rabbitmqplugins',
-  notify  => Service['rabbitmq-server'],
+package {'python-pip':
+}
+
+package {'git-core':
+}
+
+python::pip {'pika':
+  ensure => '0.9.8',
+  require => [ Package['python-pip'], Package['git-core'] ]
+}
+
+file { '/home/vagrant/send.py':
+  group => 'vagrant',
+  mode => '0755',
+  owner => 'vagrant',
+  source => 'puppet:///modules/prov/send.py'
+}
+
+file { '/home/vagrant/receive.py':
+  group => 'vagrant',
+  mode => '0755',
+  owner => 'vagrant',
+  source => 'puppet:///modules/prov/receive.py'
 }
