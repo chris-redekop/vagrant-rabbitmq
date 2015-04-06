@@ -6,7 +6,7 @@ This box contains a vagrant / puppet recipe that allows you to create a develop 
 
 ## Install
 
-* Download and install [Vagrant](http://downloads.vagrantup.com/)
+* Download and install [Vagrant](https://www.vagrantup.com/downloads.html)
 * Download and install  [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 * Clone the project ```git clone --recursive https://github.com/chris-redekop/vagrant-rabbitmq.git```; **_NOTE THE ```--recursive``` IN THE CLONE COMMAND!_**
 * In the project dir run ```vagrant up```
@@ -58,5 +58,5 @@ vagrant@vagrant-ubuntu-trusty-64:~$
 * destroy box: ```vagrant destroy```
 
 ## Links: 
--  [Vagrant](http://downloads.vagrantup.com/)
--  [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+-  [Vagrant](https://www.vagrantup.com/)
+-  [VirtualBox](https://www.virtualbox.org/)
