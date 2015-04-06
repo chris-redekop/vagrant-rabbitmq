@@ -8,7 +8,7 @@ This box contains a vagrant / puppet recipe that allows you to create a develop 
 
 * Download and install [Vagrant](http://downloads.vagrantup.com/)
 * Download and install  [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* Clone the project ```git clone --recursive git@github.com:toretto460/vagrant-rabbitmq.git```
+* Clone the project ```git clone --recursive https://github.com/chris-redekop/vagrant-rabbitmq.git```
 * In the project dir run ```vagrant up```
 
 ## Installed Services
