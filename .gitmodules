@@ -10,3 +10,6 @@
 [submodule "puppet/modules/python"]
 	path = puppet/modules/python
 	url = https://github.com/stankevich/puppet-python.git
+[submodule "puppet/modules/staging"]
+	path = puppet/modules/staging
+	url = https://github.com/nanliu/puppet-staging.git
