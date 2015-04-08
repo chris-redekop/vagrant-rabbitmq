@@ -9,7 +9,30 @@ apt::source { 'apt-source':
 
 class { '::rabbitmq':
   config => 'prov/rabbitmq.config.erb',
-  require => Apt::Source['apt-source'],
+  require => Apt::Source['apt-source']
+}
+
+rabbitmq_user { $username:
+  password => $username,
+  admin => true
+}
+
+rabbitmq_vhost { $username:
+  ensure => present,
+}
+
+rabbitmq_user_permissions { "${username}@${username}":
+  configure_permission => '.*',
+  read_permission      => '.*',
+  write_permission     => '.*',
+}
+
+rabbitmq_plugin {'rabbitmq_shovel':
+  ensure => present,
+}
+
+rabbitmq_plugin {'rabbitmq_shovel_management':
+  ensure => present,
 }
 
 package {'python-pip':
