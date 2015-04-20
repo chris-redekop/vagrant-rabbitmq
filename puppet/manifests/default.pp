@@ -7,9 +7,13 @@ apt::source { 'apt-source':
   key_source => 'http://www.rabbitmq.com/rabbitmq-signing-key-public.asc',
 }
 
+exec { 'apt-get update':
+  path => [ "/bin/", "/sbin/" , "/usr/bin/", "/usr/sbin/" ]
+}
+
 class { '::rabbitmq':
   config => 'prov/rabbitmq.config.erb',
-  require => Apt::Source['apt-source']
+  require => [ Exec['apt-get update'], Apt::Source['apt-source'] ]
 }
 
 rabbitmq_user { $username:
@@ -36,9 +40,11 @@ rabbitmq_plugin {'rabbitmq_shovel_management':
 }
 
 package {'python-pip':
+  require => Exec['apt-get update']
 }
 
 package {'git-core':
+  require => Exec['apt-get update']
 }
 
 python::pip {'pika':
